@@ -81,11 +81,11 @@ void LineFollowerClass::step() {
 
   if (l1 == 0 && l2 == 1 && l3 == 1 || l1 == 0 && l2 == 0 && l3 == 1) //left turn
   {
-    left(100, 100);
+    left(100, 200);
   }
   else if (l1 == 1 && l2 == 1 && l3 == 0 || l1 == 1 && l2 == 0 && l3 == 0) //right turn
   {
-    right(100, 100);
+    right(200, 100);
   }
 
   else  //go forward straight
