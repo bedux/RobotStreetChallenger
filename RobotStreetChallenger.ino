@@ -151,13 +151,15 @@ float getAngle() {
     fifoCount -= packetSize;
 
 
-    //                      // display quaternion values in easy matrix form: w x y z
     mpu.dmpGetQuaternion(&q, fifoBuffer);
-
+            mpu.dmpGetGravity(&gravity, &q);
+            mpu.dmpGetYawPitchRoll(ypr, &q, &gravity);
+      
+ mpu.resetFIFO();
     //
     //
 
-    return q.z;
+    return ypr[0] * 180/M_PI + 180;
 
 
   }
