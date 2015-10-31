@@ -19,7 +19,7 @@ DispatcherClass::DispatcherClass() {
 
  
 
-  this->defaultAction = new LineFollowerClass();
+  this->defaultAction = new MazeSolverClass();
   this->arrayAct[0] =  (this->defaultAction);
   this->currentAction = this->defaultAction;
 }
@@ -28,17 +28,18 @@ DispatcherClass::DispatcherClass() {
 
 long DispatcherClass::GetRFID_UID()
 {
-  Serial.print("GetRFID");
+//  Serial.print("GetRFID");
 	// Look for new cards
 	if (!mfrc522->PICC_IsNewCardPresent())
 	{
-    Serial.print("No");
+//    Serial.print("No");
 		return 0L;
 	}
 
 	// Select one of the cards
 	if (!mfrc522->PICC_ReadCardSerial())
-	{ Serial.print("No");
+	{
+//  Serial.print("No");
 		return 0L;
 	}
 

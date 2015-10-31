@@ -3,22 +3,20 @@
 #ifndef _DEFINE_h
 #define _DEFINE_h
 
-#if defined(ARDUINO) && ARDUINO >= 100
 
-	#include "arduino.h"
 
-#else
-	#include "WProgram.h"
-#endif
-//CODING 
+#include "arduino.h"
+
+
+//CODING
 
 #define ELEMENT_HASH  1
 
 //MOTORI
-	#define E1	6 //M1 Speed Control
-	#define E2  5 //M2 Speed Control
-	#define M1  8 //M1 Direction Control
-	#define M2  7 //M2 Direction Control
+#define E1	6 //M1 Speed Control
+#define E2  5 //M2 Speed Control
+#define M1  8 //M1 Direction Control
+#define M2  7 //M2 Direction Control
 
 //RFID
 
@@ -26,9 +24,21 @@
 #define SS_PIN          10          // Configurable, see typical pin layout above
 
 //LINE SENSORS
-  #define SX 1
-  #define DX 2
-  #define UP 3
+#define SX 1
+#define DX 2
+#define UP 3
+
+//PING SEBSOR
+
+#define ULTRASONIC_FRONT 1
+#define ULTRASONIC_LEFT 3
+#define ULTRASONIC_RIGHT 4
+
+
+//MAZE SOLVER INFO
+#define MIN_DISTANCE_LEFT 20
+#define MIN_DISTANCE_TOP 10
+#define DELTA 0
 
 //FLAG
 #define DEBUG

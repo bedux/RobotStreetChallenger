@@ -3,10 +3,10 @@
 #ifndef _BASEACTION_h
 #define _BASEACTION_h
 
-#if defined(ARDUINO) && ARDUINO >= 100
+
 	#include "arduino.h"
 
-#endif
+
 class ActionClass
 {
 
