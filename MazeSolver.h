@@ -10,7 +10,9 @@
 	
         extern void GiroscopioClass(void);
         extern float getAngle(void);
-        
+        extern PingSensorClass *leftPing;
+        extern  PingSensorClass *rightPing;
+        extern PingSensorClass* frontPing;
         
 class MazeSolverClass:public ActionClass
 {
@@ -19,8 +21,7 @@ class MazeSolverClass:public ActionClass
  
          MazeSolverClass();
          ~MazeSolverClass(){
-             free(frontPing);
-             free(leftPing);
+
          }
           void start();
 	  void step();
@@ -28,10 +29,11 @@ class MazeSolverClass:public ActionClass
          
   private:
   
-        PingSensorClass* frontPing;
-        PingSensorClass* leftPing;
-        PingSensorClass* rightPing;
-        PingSensorClass* colui;
+        float angleGoal=-1;
+        void Rotate90Right();
+        
+
+
         bool col = true;
 
 

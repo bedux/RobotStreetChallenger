@@ -19,8 +19,25 @@ DispatcherClass::DispatcherClass() {
 
  
 
-  this->defaultAction = new MazeSolverClass();
+  this->defaultAction = new LineFollowerClass();
   this->arrayAct[0] =  (this->defaultAction);
+  this->arrayAct[1] =  new BirilliClass();
+  this->arrayAct[2] =  new RampaClass();
+
+  this->actions[0](661,2);
+  this->actions[1](419,0);
+  this->actions[2](777,0);
+  this->actions[3](458,0);
+  this->actions[4](562,0);
+
+  this->actions[5](559,1);
+  this->actions[6](395,0);
+  this->actions[7](269,0);
+  this->actions[8](633,0);
+  this->actions[9](523,0);
+
+
+
   this->currentAction = this->defaultAction;
 }
 
@@ -50,7 +67,8 @@ long DispatcherClass::GetRFID_UID()
 		ret += mfrc522->uid.uidByte[i];
 	}
 
-  Serial.println(ret);
+
+
 	return ret;
 }
 
@@ -60,21 +78,24 @@ void DispatcherClass::NextStep() {
 	
 	//prendo Id della tessera.
 	long currentID = this->GetRFID_UID();
+			Serial.println(currentID);
+
   
-  char * p;
   if(currentID!=0)
-   p = (char*)&currentID;
 
 
    
 	//Trovata Tessera!
 	if (currentID != 0) {
 		//So  che azione fare per questo ostacolo!
-		if (this->actions.getIndexOf(p)< ELEMENT_HASH) {
+		if (this->actions.getIndexOf(currentID)< ELEMENT_HASH) {
+
 			//termino l'azione precedente
 			this->currentAction->end();
+
+			Serial.println(this->actions.getValueOf(currentID));
 			//assegno a currentAction la nuova azione  
-			this->currentAction = this->arrayAct[this->actions.getValueOf(p)];
+			this->currentAction = this->arrayAct[this->actions.getValueOf(currentID)];
 			//inizializo la nuova azione
 			this->currentAction->start();
 		}

@@ -13,8 +13,10 @@
 #include "BaseAction.h"
 #include "Define.h"
 #include "LineFollower.h"
+#include "Rampa.h"
 #include "MazeSolver.h"
-
+#include "Birilli.h"
+ 
 
 #include <SPI.h>
 #include <MFRC522.h>
@@ -35,9 +37,9 @@ class DispatcherClass
   private:
 
     void ShowReaderDetails();
-    HashType<char*, int > hashRawArray[5];
+    HashType<long, int > hashRawArray[10];
     ActionClass* arrayAct [10];
-    HashMap<char*, int> actions = HashMap<char*, int>( hashRawArray , 5 );
+    HashMap<long, int> actions = HashMap<long, int>( hashRawArray , 10 );
     ActionClass* currentAction;
     long GetRFID_UID();
     MFRC522* mfrc522;

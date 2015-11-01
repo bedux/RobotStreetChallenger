@@ -10,7 +10,7 @@
 
 //CODING
 
-#define ELEMENT_HASH  1
+#define ELEMENT_HASH  10
 
 //MOTORI
 #define E1	6 //M1 Speed Control
@@ -30,7 +30,7 @@
 
 //PING SEBSOR
 
-#define ULTRASONIC_FRONT 1
+#define ULTRASONIC_FRONT 2
 #define ULTRASONIC_LEFT 3
 #define ULTRASONIC_RIGHT 4
 
@@ -42,6 +42,10 @@
 
 //FLAG
 #define DEBUG
+
+//BIRILLI
+
+#define MOTORE_BIRILLI 5
 
 void right(char a, char b);
 void left(char a, char b);
