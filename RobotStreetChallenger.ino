@@ -30,13 +30,15 @@ DispatcherClass *dsp;
 void setup()
 {
 
-Serial.begin(9600);
+//Serial.begin(9600);
 
  
   dsp = new DispatcherClass();
   leftPing = new PingSensorClass(ULTRASONIC_LEFT);
   rightPing = new PingSensorClass(ULTRASONIC_RIGHT);
  frontPing = new PingSensorClass(ULTRASONIC_FRONT);
+  pinMode(1, OUTPUT );
+  digitalWrite(1,LOW);
   /* add setup code here */
  // GiroscopioClass();
 
@@ -48,9 +50,11 @@ void loop()
 {
 
 
+ 
 
   dsp->NextStep();
 
+ 
   /* add main program code here */
 
 }

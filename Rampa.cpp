@@ -15,8 +15,7 @@ RampaClass::RampaClass(){
 
    	long currSX = leftPing->getDistance();
     long currDX = rightPing->getDistance();
-    Serial.println(currSX);
-    Serial.println(currDX);
+
 
     long avg = (currSX + currDX)/2;
 

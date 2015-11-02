@@ -78,7 +78,6 @@ void DispatcherClass::NextStep() {
 	
 	//prendo Id della tessera.
 	long currentID = this->GetRFID_UID();
-			Serial.println(currentID);
 
   
   if(currentID!=0)
@@ -93,7 +92,6 @@ void DispatcherClass::NextStep() {
 			//termino l'azione precedente
 			this->currentAction->end();
 
-			Serial.println(this->actions.getValueOf(currentID));
 			//assegno a currentAction la nuova azione  
 			this->currentAction = this->arrayAct[this->actions.getValueOf(currentID)];
 			//inizializo la nuova azione
@@ -108,7 +106,6 @@ void DispatcherClass::NextStep() {
 
 void dump_byte_array(byte *buffer, byte bufferSize) {
     for (byte i = 0; i < bufferSize; i++) {
-        Serial.print(buffer[i] < 0x10 ? " 0" : " ");
-        Serial.print(buffer[i], HEX);
+        
     }
 }

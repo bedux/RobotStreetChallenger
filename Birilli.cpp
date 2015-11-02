@@ -3,17 +3,16 @@
 
 void BirilliClass::start(){
 
-	  digitalWrite(0, LOW); 
+	 // digitalWrite(2, HIGH); 
 }
 
 void BirilliClass::step(){
 
 
-		  digitalWrite(0, LOW); 
+		  digitalWrite(1, HIGH); 
 		  	long currSX = leftPing->getDistance();
 		    long currDX = rightPing->getDistance();
-		    Serial.println(currSX);
-		    Serial.println(currDX);
+		   
 
 		    long avg = (currSX + currDX)/2;
 
@@ -30,5 +29,5 @@ void BirilliClass::step(){
 
 void BirilliClass::end(){
 
-	digitalWrite(0, LOW); 
+	digitalWrite(1, LOW); 
 }
