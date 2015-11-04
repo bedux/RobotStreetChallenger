@@ -10,7 +10,7 @@
 
 //CODING
 
-#define ELEMENT_HASH  10
+#define ELEMENT_HASH  15 
 
 //MOTORI
 #define E1	6 //M1 Speed Control

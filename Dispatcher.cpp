@@ -23,18 +23,26 @@ DispatcherClass::DispatcherClass() {
   this->arrayAct[0] =  (this->defaultAction);
   this->arrayAct[1] =  new BirilliClass();
   this->arrayAct[2] =  new RampaClass();
-
-  this->actions[0](661,2);
+  this->arrayAct[3] = new MazeSolverClass();
+  this->actions[0](481,2);
   this->actions[1](419,0);
   this->actions[2](777,0);
   this->actions[3](458,0);
   this->actions[4](562,0);
 
-  this->actions[5](559,1);
+  this->actions[5](328,1);
   this->actions[6](395,0);
   this->actions[7](269,0);
   this->actions[8](633,0);
   this->actions[9](523,0);
+
+  this->actions[10](462,3);
+  this->actions[11](516,0);
+  this->actions[12](542,0);
+  this->actions[13](339,0);
+  this->actions[14](413,0);
+
+
 
 
 
@@ -73,13 +81,20 @@ long DispatcherClass::GetRFID_UID()
 }
 
 
+int l = 0;
 
 void DispatcherClass::NextStep() {
 	
+	l++;
+	long currentID;
+	if(l>10){
+		l=0;
+		currentID = this->GetRFID_UID();   
+	}
 	//prendo Id della tessera.
-	long currentID = this->GetRFID_UID();
+	 
 
-  
+  Serial.println(currentID);  
   if(currentID!=0)
 
 

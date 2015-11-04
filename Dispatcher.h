@@ -37,9 +37,9 @@ class DispatcherClass
   private:
 
     void ShowReaderDetails();
-    HashType<long, int > hashRawArray[10];
-    ActionClass* arrayAct [10];
-    HashMap<long, int> actions = HashMap<long, int>( hashRawArray , 10 );
+    HashType<long, int > hashRawArray[15];
+    ActionClass* arrayAct [4];
+    HashMap<long, int> actions = HashMap<long, int>( hashRawArray , 15 );
     ActionClass* currentAction;
     long GetRFID_UID();
     MFRC522* mfrc522;
